@@ -1,2 +1,16 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+import cv2
+import numpy as numpy
+
+width=300
+height=400
+
+image=np.zeros(shape=(width,height,3),dtype=np.uint8)
+
+for x in range(width):
+    color=(0,int(255*(x/width)),int(255*(1-(x/width))))
+    cv2.line(image,(x,0),(x,height),color)
+
+cv2.imshow("image1",image)
+cv2.waitkey(0)
